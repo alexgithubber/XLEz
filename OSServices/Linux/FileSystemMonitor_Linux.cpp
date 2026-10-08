@@ -188,7 +188,7 @@ namespace OSServices
 		auto split = MakeFileNameSplitter(filename);
 		utf8 directoryName[MaxPath];
 		MakeSplitPath(split.StemAndPath()).Simplify().Rebuild(directoryName);
-		auto hash = HashFilenameAndPath(MakeStringSection(directoryName));
+		auto hash = HashFilenameAndPath(MakeStringSectionNullTerm(directoryName));
 
 		{
 			ScopedLock(_pimpl->_conduitConsumer->_monitoredDirectoriesLock);			
@@ -232,7 +232,7 @@ namespace OSServices
 
 		{
 			ScopedLock(_pimpl->_conduitConsumer->_monitoredDirectoriesLock);
-			auto hash = HashFilenameAndPath(MakeStringSection(directoryName));
+			auto hash = HashFilenameAndPath(MakeStringSectionNullTerm(directoryName));
 			auto i = std::lower_bound(
 				_pimpl->_conduitConsumer->_monitoredDirectories.cbegin(), _pimpl->_conduitConsumer->_monitoredDirectories.cend(),
 				hash, CompareFirst<uint64_t, std::unique_ptr<MonitoredDirectory>>());

@@ -407,12 +407,12 @@ namespace Utility
 		}
 		SerializableBasicString& operator+=(StringSection<CharType> str)
 		{
-			insert(end(), str.begin(), str.end());
+			insert(SerializableVector<CharType>::end(), str.begin(), str.end());
 			return *this;
 		}
 		SerializableBasicString& append(StringSection<CharType> str)
 		{
-			insert(end(), str.begin(), str.end());
+			insert(SerializableVector<CharType>::end(), str.begin(), str.end());
 			return *this;
 		}
 
@@ -485,4 +485,3 @@ namespace Utility
 }
 
 using namespace Utility;
-

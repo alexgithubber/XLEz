@@ -93,7 +93,7 @@ namespace Formatters
 	{
 	public:
 		virtual const ::Assets::DependencyValidation& GetDependencyValidation() const override;
-		virtual const char* what() const override;
+		virtual const char* what() const noexcept override;
 		FormatException(StringSection<> msg, StreamLocation location);
 	private:
 		std::string _msg;

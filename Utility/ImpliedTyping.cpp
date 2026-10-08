@@ -3,6 +3,7 @@
 // http://www.opensource.org/licenses/mit-license.php)
 
 #include "ImpliedTyping.h"
+#include <cmath>
 #include "Conversion.h"
 #include "FastParseValue.h"
 #include "StringFormat.h"       // for StringSection<> stream operator
@@ -1868,4 +1869,3 @@ namespace Utility { namespace ImpliedTyping
     }
 
 }}
-

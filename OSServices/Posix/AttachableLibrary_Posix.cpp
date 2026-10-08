@@ -5,6 +5,7 @@
 #include "../AttachableLibrary.h"
 #include "../Log.h"
 #include "../../ConsoleRig/GlobalServices.h"
+#include "../../ConsoleRig/AttachablePtr.h"
 #include "../../Utility/Streams/PathUtils.h"
 #include <dlfcn.h>
 #include <assert.h>
@@ -128,4 +129,3 @@ namespace OSServices
 		return *this;
 	}
 }
-

@@ -9,6 +9,7 @@
 #include "IteratorUtils.h"
 #include "../Core/Exceptions.h"
 #include <functional>
+#include <atomic>
 #include <vector>
 #include <cstdint>
 #include <stdexcept>
@@ -649,4 +650,3 @@ namespace Utility
 }
 
 using namespace Utility;
-

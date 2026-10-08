@@ -29,6 +29,11 @@
 
 #elif (COMPILER_ACTIVE == COMPILER_TYPE_GCC) || (COMPILER_ACTIVE == COMPILER_TYPE_CLANG)
 
+    #if !defined(_alloca)
+        #include <alloca.h>
+        #define _alloca alloca
+    #endif
+
     #define never_throws		noexcept
     #define force_inline		inline __attribute__(( always_inline ))
 	#define no_inline           __attribute__(( noinline ))

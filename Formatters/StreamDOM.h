@@ -9,6 +9,7 @@
 #include "TextFormatter.h"
 #include "TextOutputFormatter.h"
 #include "../Utility/StringUtils.h"     // (for StringSection)
+#include "../Utility/Conversion.h"
 #include "../Utility/Optional.h"
 #include "../Utility/ImpliedTyping.h"
 #include <vector>

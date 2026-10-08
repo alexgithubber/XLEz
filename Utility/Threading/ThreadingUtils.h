@@ -72,23 +72,23 @@
 
         namespace Utility { namespace Interlocked
         {
-            using Value = std::atomic<int32>;
-            using Value64 = std::atomic<int64>;
+            using Value = std::atomic<int32_t>;
+            using Value64 = std::atomic<int64_t>;
 			template<typename Type> using Pointer = std::atomic<Type*>;
 
-            force_inline int32 Exchange(Value volatile* target, int32 newValue)                                             { return std::atomic_exchange(target, newValue); }
-            force_inline int32 CompareExchange(Value volatile* target, int32 newValue, int32 comparisonValue)               { auto prev = std::atomic_load(target); return std::atomic_compare_exchange_strong(target, &comparisonValue, newValue) ? comparisonValue : prev; }
-            force_inline int32 Load(Value volatile* target)						{ return std::atomic_load(target); }
-			force_inline void Store(Value volatile* target, int32 value)		{ std::atomic_store(target, value); }
+            force_inline int32_t Exchange(Value volatile* target, int32_t newValue)                                             { return std::atomic_exchange(target, newValue); }
+            force_inline int32_t CompareExchange(Value volatile* target, int32_t newValue, int32_t comparisonValue)               { auto prev = std::atomic_load(target); return std::atomic_compare_exchange_strong(target, &comparisonValue, newValue) ? comparisonValue : prev; }
+            force_inline int32_t Load(Value volatile* target)						{ return std::atomic_load(target); }
+			force_inline void Store(Value volatile* target, int32_t value)		{ std::atomic_store(target, value); }
             
-            force_inline int64 Exchange64(Value64 volatile* target, int64 newValue)                                       { return std::atomic_exchange(target, newValue); }
-            force_inline int64 CompareExchange64(Value64 volatile* target, int64 newValue, int64 comparisonValue)         { auto prev = std::atomic_load(target); return std::atomic_compare_exchange_strong(target, &comparisonValue, newValue) ? comparisonValue : prev; }
-            force_inline int64 Load64(Value64 volatile const* target)         { return std::atomic_load(target); }
-			force_inline void Store(Value64 volatile* target, int64 value)		{ std::atomic_store(target, value); }
+            force_inline int64_t Exchange64(Value64 volatile* target, int64_t newValue)                                       { return std::atomic_exchange(target, newValue); }
+            force_inline int64_t CompareExchange64(Value64 volatile* target, int64_t newValue, int64_t comparisonValue)         { auto prev = std::atomic_load(target); return std::atomic_compare_exchange_strong(target, &comparisonValue, newValue) ? comparisonValue : prev; }
+            force_inline int64_t Load64(Value64 volatile const* target)         { return std::atomic_load(target); }
+			force_inline void Store(Value64 volatile* target, int64_t value)		{ std::atomic_store(target, value); }
             
-            force_inline int32 Increment(Value volatile* target)              { return std::atomic_fetch_add(target, 1); }
-            force_inline int32 Decrement(Value volatile* target)              { return std::atomic_fetch_add(target, -1); }
-            force_inline int32 Add(Value volatile* target, int32 addition)    { return std::atomic_fetch_add(target, addition); }
+            force_inline int32_t Increment(Value volatile* target)              { return std::atomic_fetch_add(target, 1); }
+            force_inline int32_t Decrement(Value volatile* target)              { return std::atomic_fetch_add(target, -1); }
+            force_inline int32_t Add(Value volatile* target, int32_t addition)    { return std::atomic_fetch_add(target, addition); }
             
             T1(Type) force_inline Type* ExchangePointer(std::atomic<Type*>* target, Type* newValue)                                 { return std::atomic_exchange(target, newValue); }
             T1(Type) force_inline Type* CompareExchangePointer(std::atomic<Type*>* target, Type* newValue, Type* comparisonValue)   { auto prev = std::atomic_load(target); return std::atomic_compare_exchange_strong(target, &comparisonValue, newValue) ? comparisonValue : prev; }
@@ -344,4 +344,3 @@ namespace Utility { namespace Threading {
 #endif
 
 #endif
-

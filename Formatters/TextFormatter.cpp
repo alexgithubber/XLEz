@@ -362,7 +362,7 @@ namespace Formatters
 
 
     const ::Assets::DependencyValidation& FormatException::GetDependencyValidation() const { return _depVal; }
-	const char* FormatException::what() const { return _msg.c_str(); }
+	const char* FormatException::what() const noexcept { return _msg.c_str(); }
 
     FormatException::FormatException(StringSection<> label, StreamLocation location)
     : _depVal(std::move(location._depVal))
@@ -1000,4 +1000,3 @@ namespace Formatters
     template class TextInputFormatter<utf8>;
     template class TextStreamMarker<utf8>;
 }
-

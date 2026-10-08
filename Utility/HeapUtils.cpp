@@ -9,6 +9,7 @@
 #include "MemoryUtils.h"
 #include "BitUtils.h"
 #include <assert.h>
+#include <limits.h>
 
 namespace Utility
 {
@@ -1173,4 +1174,3 @@ namespace Utility
     {}
 
 }
-
